@@ -1,9 +1,22 @@
 class Vehiculo:
-    color = "verde"
-    ruedas = 4
-    puertas = 5
-class Coche(Vehiculo):
-    velocidad = 120
-    cilindrada = 2200
-coche1 = Coche
-print(f'Coche1 -- Color: {coche1.color}| ruedas: {coche1.ruedas}| puertas: {coche1.puertas}| velocidad: {coche1.velocidad}| cilindrada: {coche1.cilindrada}')
+    def __init__(self, color, ruedas, puertas):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+    def __str__(self):
+        return "Color {}, {} ruedas".format(self.color, self.ruedas, self.puertas)
+
+class Coche (Vehiculo):
+    def __init__(self, color, ruedas, puertas, velocidad, cilindrada):
+        self.color = color
+        self.ruedas = ruedas
+        self.puertas = puertas
+        self.velocidad = velocidad
+        self.cilindrada = cilindrada
+
+    def __str__(self):
+        return "color {}, {} km/h, {} ruedas, {} puertas, {}cc".format(self.color, self.velocidad, self.ruedas, self.puertas, self.cilindrada)
+
+
+coche1 = Coche("verde", 4, 5, 120, 2200)
+print(coche1)
